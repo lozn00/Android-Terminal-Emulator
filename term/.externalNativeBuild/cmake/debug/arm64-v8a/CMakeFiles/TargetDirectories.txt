@@ -1,3 +1,0 @@
-F:/src/Android-Terminal-Emulator-master/Android-Terminal-Emulator-master/term/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/androidterm5.dir
-F:/src/Android-Terminal-Emulator-master/Android-Terminal-Emulator-master/term/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
-F:/src/Android-Terminal-Emulator-master/Android-Terminal-Emulator-master/term/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir

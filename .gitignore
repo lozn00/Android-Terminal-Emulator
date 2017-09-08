@@ -12,3 +12,5 @@
 /gradlew.bat
 /tests
 /artwork
+/term/.externalNativeBuild
+.externalNativeBuild

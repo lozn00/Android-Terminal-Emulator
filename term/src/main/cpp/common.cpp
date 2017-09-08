@@ -39,6 +39,8 @@
 /*
  * Register several native methods for one class.
  */
+
+ extern "C"
 int registerNativeMethods(JNIEnv* env, const char* className,
     JNINativeMethod* gMethods, int numMethods)
 {

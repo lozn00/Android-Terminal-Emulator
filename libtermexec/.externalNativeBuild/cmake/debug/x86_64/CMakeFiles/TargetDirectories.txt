@@ -1,3 +1,0 @@
-F:/src/Android-Terminal-Emulator-master/Android-Terminal-Emulator-master/libtermexec/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/libtermexec.dir
-F:/src/Android-Terminal-Emulator-master/Android-Terminal-Emulator-master/libtermexec/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/edit_cache.dir
-F:/src/Android-Terminal-Emulator-master/Android-Terminal-Emulator-master/libtermexec/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/rebuild_cache.dir
