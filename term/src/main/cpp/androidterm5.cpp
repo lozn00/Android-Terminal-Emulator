@@ -30,6 +30,24 @@
 
 #include "androidterm5.h"
 
+extern "C"
+int registerNativeMethods(JNIEnv* env, const char* className,
+                          JNINativeMethod* gMethods, int numMethods)
+{
+    jclass clazz;
+
+    clazz = env->FindClass(className);
+    if (clazz == NULL) {
+        LOGE("Native registration unable to find class '%s'", className);
+        return JNI_FALSE;
+    }
+    if (env->RegisterNatives(clazz, gMethods, numMethods) < 0) {
+        LOGE("RegisterNatives failed for '%s'", className);
+        return JNI_FALSE;
+    }
+
+    return JNI_TRUE;
+}
 static void android_os_Exec_setPtyWindowSize(JNIEnv *env, jobject clazz,
     jint fd, jint row, jint col, jint xpixel, jint ypixel)
 {
@@ -90,3 +108,58 @@ int init_Exec(JNIEnv *env) {
 
     return JNI_TRUE;
 }
+
+
+
+
+int init_FileCompat(JNIEnv *env) {
+    if (!registerNativeMethods(env, classPathName, method_table,
+                               sizeof(method_table) / sizeof(method_table[0]))) {
+        return JNI_FALSE;
+    }
+
+    return JNI_TRUE;
+}
+
+// ----------------------------------------------------------------------------
+
+/*
+ * This is called by the VM when the shared library is first loaded.
+ */
+
+typedef union {
+    JNIEnv* env;
+    void* venv;
+} UnionJNIEnvToVoid;
+
+
+jint JNI_OnLoad(JavaVM* vm, void* reserved) {
+    UnionJNIEnvToVoid uenv;
+    uenv.venv = NULL;
+    jint result = -1;
+    JNIEnv* env = NULL;
+
+    LOGI("JNI_OnLoad");
+
+    if (vm->GetEnv(&uenv.venv, JNI_VERSION_1_4) != JNI_OK) {
+        LOGE("ERROR: GetEnv failed");
+        goto bail;
+    }
+    env = uenv.env;
+
+    if (init_Exec(env) != JNI_TRUE) {
+        LOGE("ERROR: init of Exec failed");
+        goto bail;
+    }
+
+    if (init_FileCompat(env) != JNI_TRUE) {
+        LOGE("ERROR: init of Exec failed");
+        goto bail;
+    }
+
+    result = JNI_VERSION_1_4;
+
+    bail:
+    return result;
+}
+

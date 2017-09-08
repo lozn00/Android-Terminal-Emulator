@@ -41,7 +41,7 @@
  */
 
  extern "C"
-int registerNativeMethods(JNIEnv* env, const char* className,
+int registerNativeMethodsX(JNIEnv* env, const char* className,
     JNINativeMethod* gMethods, int numMethods)
 {
     jclass clazz;
