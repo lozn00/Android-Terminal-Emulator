@@ -1,0 +1,41 @@
+
+{
+	"buildFiles" : 
+	[
+		"F:/src/Android-Terminal-Emulator-master/Android-Terminal-Emulator-master/libtermexec/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"F:\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build F:\\src\\Android-Terminal-Emulator-master\\Android-Terminal-Emulator-master\\libtermexec\\.externalNativeBuild\\cmake\\debug\\mips --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"libtermexec-Debug-mips" : 
+		{
+			"abi" : "mips",
+			"artifactName" : "libtermexec",
+			"buildCommand" : "F:\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build F:\\src\\Android-Terminal-Emulator-master\\Android-Terminal-Emulator-master\\libtermexec\\.externalNativeBuild\\cmake\\debug\\mips --target libtermexec",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  -target mipsel-none-linux-android -gcc-toolchain F:/Sdk/ndk-bundle/toolchains/mipsel-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=F:/Sdk/ndk-bundle/platforms/android-9/arch-mips  -Dlibtermexec_EXPORTS -isystem F:\\Sdk\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem F:\\Sdk\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\mips\\include -isystem F:\\Sdk\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "F:/src/Android-Terminal-Emulator-master/Android-Terminal-Emulator-master/libtermexec/src/main/cpp/libtermexec.cpp",
+					"workingDirectory" : "F:/src/Android-Terminal-Emulator-master/Android-Terminal-Emulator-master/libtermexec/.externalNativeBuild/cmake/debug/mips"
+				}
+			],
+			"output" : "F:/src/Android-Terminal-Emulator-master/Android-Terminal-Emulator-master/libtermexec/build/intermediates/cmake/debug/obj/mips/liblibtermexec.so",
+			"toolchain" : "1729420993"
+		}
+	},
+	"toolchains" : 
+	{
+		"1729420993" : 
+		{
+			"cCompilerExecutable" : "F:/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "F:/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

@@ -1,0 +1,14 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+*.iml
+/.idea
+/gradle
+/Android-Terminal-Emulator-master.iml
+/gradlew
+/gradlew.bat
+/tests
+/artwork
