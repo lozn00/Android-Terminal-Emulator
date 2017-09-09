@@ -14,3 +14,4 @@
 /artwork
 /term/.externalNativeBuild
 .externalNativeBuild
+/term/*.apk
