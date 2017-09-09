@@ -171,7 +171,6 @@ public class Term extends Activity implements UpdateCallback, SharedPreferences.
 
     private class WindowListActionBarAdapter extends WindowListAdapter implements UpdateCallback {
         // From android.R.style in API 13
-        private static final int TextAppearance_Holo_Widget_ActionBar_Title = 0x01030112;
 
         public WindowListActionBarAdapter(SessionList sessions) {
             super(sessions);
@@ -183,7 +182,7 @@ public class Term extends Activity implements UpdateCallback, SharedPreferences.
             String title = getSessionTitle(position, getString(R.string.window_title, position + 1));
             label.setText(title);
             if (AndroidCompat.SDK >= 13) {
-                label.setTextAppearance(Term.this, TextAppearance_Holo_Widget_ActionBar_Title);
+                label.setTextAppearance(Term.this, android.R.style.TextAppearance_Holo_Widget_ActionBar_Title);
             } else {
                 label.setTextAppearance(Term.this, android.R.style.TextAppearance_Medium);
             }
@@ -376,7 +375,7 @@ public class Term extends Activity implements UpdateCallback, SharedPreferences.
 
         PowerManager pm = (PowerManager)getSystemService(Context.POWER_SERVICE);
         mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TermDebug.LOG_TAG);
-        WifiManager wm = (WifiManager)getSystemService(Context.WIFI_SERVICE);
+        WifiManager wm = (WifiManager)getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         int wifiLockMode = WifiManager.WIFI_MODE_FULL;
         if (AndroidCompat.SDK >= 12) {
             wifiLockMode = WIFI_MODE_FULL_HIGH_PERF;
